@@ -1,0 +1,224 @@
+/* VARIABLES */
+:root {
+  /* CColor--> C stands for custom */
+  --CGreen: #11d200;
+  --medium: #3f8cff;
+  --hard: #ff000f;
+  --BGWhite: rgba(255, 255, 255, 0.05);
+  --BGBlack: #161616;
+  --replay: #606060;
+}
+
+*::selection {
+  background-color: transparent;
+}
+
+/* DEFAULT SETTINGS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--BGBlack);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 75px;
+  height: 400px;
+  background-color: var(--BGWhite);
+  transform: rotate(45deg) translate(-20%, -30%);
+  z-index: -1;
+}
+
+button {
+  border: none;
+  width: 200px;
+  padding: 1rem 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.01);
+}
+
+.hide {
+  display: none !important;
+}
+
+/* Wrapper */
+
+.wrapper {
+  height: 100%;
+  width: 50%;
+  min-width: 700px;
+  max-width: 900px;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.title h1 {
+  color: var(--CGreen);
+  font-weight: bolder;
+  font-size: 44px;
+}
+
+p.timer {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  border: 1px solid white;
+  position: relative;
+  overflow: hidden;
+}
+
+p.timer::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 150%;
+  position: absolute;
+  transform: rotate(30deg) translate(-20%, -20%);
+  background-color: rgba(255, 255, 255, 0.15);
+  animation: titleAnimation 3s ease infinite;
+  left: -10%;
+}
+
+@keyframes titleAnimation {
+  0% {
+    left: -10%;
+  }
+  20% {
+    left: 110%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+.gameUI {
+  height: 600px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 1rem 0.5rem;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin: 1rem 0;
+}
+
+.screen {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+}
+
+.startingText,
+.endScore {
+  text-align: center;
+  color: var(--BGBlack);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.startingText {
+  font-size: 24px;
+}
+.endScore {
+  font-size: 42px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--CGreen);
+  cursor: pointer;
+}
+
+.box p.score {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100px;
+}
+
+.levelWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.easyBtn {
+  background-color: var(--CGreen);
+}
+
+.mediumBtn {
+  background-color: var(--medium);
+}
+
+.hardBtn {
+  background-color: var(--hard);
+}
+
+.repeatBtn {
+  background-color: var(--replay);
+}
+
+@media only screen and (max-width: 700px) {
+  body::before {
+    display: none;
+  }
+
+  .wrapper {
+    min-width: unset;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .title h1 {
+    font-size: 28px;
+  }
+  .levelWrapper {
+    padding: 1rem;
+  }
+  .btnWrapper {
+    min-height: unset;
+  }
+}

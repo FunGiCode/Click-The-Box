@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>Click The Box</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        <h1>CLICK THE BOX</h1>
+        <p class="timer" data-time="10">10s</p>
+      </div>
+      <div class="gameUI">
+        <div class="screen">
+          <div class="startingText">Select a Level to Start...</div>
+          <p class="endScore hide">SCORE:0</p>
+          <div class="box hide">
+            <p class="score">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="btnWrapper">
+        <div class="levelWrapper">
+          <button class="easyBtn" data-level="1">EASY</button>
+          <button class="mediumBtn" data-level="2">MEDIUM</button>
+          <button class="hardBtn" data-level="3">HARD</button>
+        </div>
+        <button class="repeatBtn hide">REPLAY</button>
+      </div>
+    </div>
+    <!-- Javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>
